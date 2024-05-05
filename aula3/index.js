@@ -1,2 +1,3 @@
 // Exemplo de uso
 console.log('Meu nome é "Otávio". Estou aprendendo JavaScript às', 20, 'da noite.');
+console.log('Meu nome é Alessandro Márcio estou aprendendo JS');
