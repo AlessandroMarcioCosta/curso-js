@@ -1,6 +1,6 @@
 const pessoa1 = {
-  nome: 'Luiz',
-  sobrenome: 'Miranda',
+  nome: 'Alessandro',
+  sobrenome: 'Márcio',
   idade: 25,
 
   fala() {

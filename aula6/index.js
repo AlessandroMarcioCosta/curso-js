@@ -6,8 +6,8 @@
 // Case-sensitive
 // Não podemos redeclarar variáveis com let
 // NÃO UTILIZE VAR, UTILIZE LET.
-let nomeCliente = 'Luiz';
-nomeCliente = 'Otávio';
+let nomeCliente = 'Alessandro';
+nomeCliente = 'Márcio';
 
 
 console.log(nomeCliente);
