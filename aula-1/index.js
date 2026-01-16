@@ -1,1 +1,0 @@
-console.log("Hello, World! This is Aula 1.");
