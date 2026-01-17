@@ -9,7 +9,7 @@
 
   <!-- Bootstrap CSS (estilização pronta) -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
+<script src="js/script.js"></script>
   <title>Álcool ou Gasolina</title>
 </head>
 
@@ -76,46 +76,7 @@
   </div>
 
   <!-- JavaScript -->
-  <script>
-    // Função que será executada ao clicar no botão
-    function calcularMelhorPreco() {
-
-      // Captura os valores digitados
-      let precoAlcool = document.getElementById("alcool").value;
-      let precoGasolina = document.getElementById("gasolina").value;
-
-      // Substitui vírgula por ponto e converte para número
-      precoAlcool = parseFloat(precoAlcool.replace(",", "."));
-      precoGasolina = parseFloat(precoGasolina.replace(",", "."));
-
-      // Referência ao elemento de resultado
-      let resultado = document.getElementById("resultado");
-
-      // Validação dos valores
-      if (
-        isNaN(precoAlcool) || 
-        isNaN(precoGasolina) || 
-        precoAlcool <= 0 || 
-        precoGasolina <= 0
-      ) {
-        resultado.innerHTML = "Por favor, insira valores válidos.";
-        resultado.className = "alert alert-danger text-center";
-        return;
-      }
-
-      // Regra dos 70%
-      let proporcao = precoAlcool / precoGasolina;
-
-      // Verificação do melhor combustível
-      if (proporcao < 0.7) {
-        resultado.innerHTML = "✅ Melhor utilizar Álcool";
-        resultado.className = "alert alert-success text-center";
-      } else {
-        resultado.innerHTML = "⛽ Melhor utilizar Gasolina";
-        resultado.className = "alert alert-warning text-center";
-      }
-    }
-  </script>
+  
 
   <!-- Bootstrap JS (opcional, mas recomendado) -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
