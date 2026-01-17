@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <!-- Define o conjunto de caracteres -->
+  <meta charset="utf-8">
+
+  <!-- Responsividade para dispositivos móveis -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS (estilização pronta) -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <title>Álcool ou Gasolina</title>
+</head>
+
+<body>
+
+  <!-- Container central do Bootstrap -->
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+
+        <!-- Card visual -->
+        <div class="card">
+          <div class="card-body">
+
+            <h3 class="card-title text-center mb-4">
+              É melhor utilizar Álcool ou Gasolina?
+            </h3>
+
+            <!-- Formulário -->
+            <form>
+
+              <!-- Campo Álcool -->
+              <div class="form-group">
+                <label for="alcool">Preço do Álcool</label>
+                <input 
+                  type="text" 
+                  id="alcool"
+                  class="form-control"
+                  placeholder="Ex: 2.20">
+              </div>
+
+              <!-- Campo Gasolina -->
+              <div class="form-group">
+                <label for="gasolina">Preço da Gasolina</label>
+                <input 
+                  type="text" 
+                  id="gasolina"
+                  class="form-control"
+                  placeholder="Ex: 3.50">
+              </div>
+
+              <!-- Resultado -->
+              <div 
+                id="resultado" 
+                class="alert alert-primary text-center">
+                Informe os valores acima
+              </div>
+
+              <!-- Botão -->
+              <button 
+                type="button" 
+                class="btn btn-primary btn-block"
+                onclick="calcularMelhorPreco()">
+                Calcular
+              </button>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Função que será executada ao clicar no botão
+    function calcularMelhorPreco() {
+
+      // Captura os valores digitados
+      let precoAlcool = document.getElementById("alcool").value;
+      let precoGasolina = document.getElementById("gasolina").value;
+
+      // Substitui vírgula por ponto e converte para número
+      precoAlcool = parseFloat(precoAlcool.replace(",", "."));
+      precoGasolina = parseFloat(precoGasolina.replace(",", "."));
+
+      // Referência ao elemento de resultado
+      let resultado = document.getElementById("resultado");
+
+      // Validação dos valores
+      if (
+        isNaN(precoAlcool) || 
+        isNaN(precoGasolina) || 
+        precoAlcool <= 0 || 
+        precoGasolina <= 0
+      ) {
+        resultado.innerHTML = "Por favor, insira valores válidos.";
+        resultado.className = "alert alert-danger text-center";
+        return;
+      }
+
+      // Regra dos 70%
+      let proporcao = precoAlcool / precoGasolina;
+
+      // Verificação do melhor combustível
+      if (proporcao < 0.7) {
+        resultado.innerHTML = "✅ Melhor utilizar Álcool";
+        resultado.className = "alert alert-success text-center";
+      } else {
+        resultado.innerHTML = "⛽ Melhor utilizar Gasolina";
+        resultado.className = "alert alert-warning text-center";
+      }
+    }
+  </script>
+
+  <!-- Bootstrap JS (opcional, mas recomendado) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
